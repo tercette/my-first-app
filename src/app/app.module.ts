@@ -33,7 +33,6 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
         BrowserModule,
         FormsModule,
         AppRoutingModule
-
     ],
     providers: [ShoppingListService],
     bootstrap: [AppComponent]
