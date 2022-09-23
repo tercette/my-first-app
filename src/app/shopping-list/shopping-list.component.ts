@@ -27,10 +27,6 @@ private destroying: Subscription;
     )
   }
 
-  onEditItem(index: number){
-    this.slService.startedEditing.next(index);
-  }
-
   OnDestroy(){
   this.destroying.unsubscribe();
   }
