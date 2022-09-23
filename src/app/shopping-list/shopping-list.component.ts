@@ -27,6 +27,9 @@ private destroying: Subscription;
     )
   }
 
+  onEditItem(index: number){
+
+}
   OnDestroy(){
   this.destroying.unsubscribe();
   }
