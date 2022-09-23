@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Ingredient } from '../shared/ingredient.model';
 import { Recipe } from './recipe.model';
 import { Subject } from 'rxjs/Subject';
+import { SlicePipe } from '@angular/common';
 
 @Injectable()
 export class RecipeService {
@@ -57,6 +58,11 @@ this.slService.addIngredients(ingredients);
 
   updateRecipe(index: number, newRecipe: Recipe){
     this.recipes[index] = newRecipe;
+    this.recipesChanged.next(this.recipes.slice());
+  }
+
+  deleteRecipe(index: number){
+    this.recipes.splice(index, 1)
     this.recipesChanged.next(this.recipes.slice());
   }
 }
