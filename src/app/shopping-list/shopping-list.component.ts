@@ -10,12 +10,10 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./shopping-list.component.css']
 })
 export class ShoppingListComponent implements OnInit, OnDestroy {
+
   ingredients: Ingredient[];
   private destroying: Subscription;
   constructor(private slService: ShoppingListService) { }
-  ngOnDestroy(): void {
-    throw new Error('Method not implemented.');
-  }
 
   ngOnInit(): void {
     this.ingredients = this.slService.getIngredients();
@@ -31,7 +29,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
     this.slService.startedEditing.next(index);
   }
 
-  OnDestroy() {
+  ngOnDestroy() {
     this.destroying.unsubscribe();
   }
 
