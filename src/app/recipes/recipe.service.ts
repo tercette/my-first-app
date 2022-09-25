@@ -9,7 +9,7 @@ import { SlicePipe } from '@angular/common';
 export class RecipeService {
 
 recipesChanged = new Subject<Recipe[]>();
-  private recipes: Recipe[] = [
+ /*  private recipes: Recipe[] = [
     new Recipe(
       'Torta de presunto e queijo',
       'tortas',
@@ -36,7 +36,9 @@ recipesChanged = new Subject<Recipe[]>();
         new Ingredient('250g de polvilho azedo',1),
         new Ingredient('Óleo para untar',1),
       ])
-    ];
+    ]; */
+
+    private recipes : Recipe[] = [];
 
   constructor(private slService: ShoppingListService){}
 
