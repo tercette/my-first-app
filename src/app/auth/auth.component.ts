@@ -24,9 +24,9 @@ export class AuthComponent {
     const email = form.value.email;
     const password = form.value.password;
     this.isLoading = true;
-    if(this.isLoginMode) {
+    if (this.isLoginMode) {
       // ...
-    }else {
+    } else {
       this.authService.signup(email, password).subscribe(resData => {
         console.log(resData)
         this.isLoading = false;
@@ -36,14 +36,14 @@ export class AuthComponent {
           this.error = errorMessage;
           this.isLoading = false;
         }
-        );
+      );
 
     }
 
     form.reset();
   }
 
-  reseting(form: NgForm){
+  reseting(form: NgForm) {
     form.reset();
   }
 
