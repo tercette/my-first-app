@@ -37,5 +37,9 @@ export class AuthComponent {
     form.reset();
   }
 
+  reseting(form: NgForm){
+    form.reset();
+  }
+
 
 }
