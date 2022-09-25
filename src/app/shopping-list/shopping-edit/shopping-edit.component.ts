@@ -1,4 +1,8 @@
-import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs/Subscription';
 import { Ingredient } from './../../shared/ingredient.model';
@@ -18,7 +22,7 @@ editedItem: Ingredient;
 
   constructor(private slService : ShoppingListService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.subscription = this.slService.startedEditing
     .subscribe(
       (index: number) => {
@@ -30,7 +34,7 @@ editedItem: Ingredient;
             amount: this.editedItem.amount
           })
       }
-    )
+    );
   }
 
   onSubmit(form: NgForm) {
