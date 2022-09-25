@@ -31,13 +31,13 @@ export class AuthComponent {
         console.log(resData)
         this.isLoading = false;
       },
-        error => {
-          console.log(error)
-          this.error = 'An error Occour'
+        errorMessage => {
+          console.log(errorMessage);
+          this.error = errorMessage;
           this.isLoading = false;
         }
         );
-        
+
     }
 
     form.reset();
