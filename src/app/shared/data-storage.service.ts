@@ -23,16 +23,10 @@ export class DataStorageService {
   }
 
   fetchRecipes() {
-    return this.authService.user.pipe(
-      take(1),
-      exhaustMap(user => {
+
         return this.http.get<Recipe[]>(
           'https://livro-de-receita-6326a-default-rtdb.firebaseio.com/recipes.json',
-          {
-            params: new HttpParams().set('auth', user.token)
-          }
-        );
-      }),
+        ).pipe(
       map(recipes => {
         return recipes.map(recipes => {
           return {
