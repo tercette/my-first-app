@@ -89,6 +89,12 @@ export class AuthService {
         new Date(userData._tokenExpirationDate).getTime() -
         new Date().getTime();
       this.autologout(expirationDuration);
+      //console.log(expirationDuration)
+      //console.log("Token Expires in "+((expirationDuration/1000)/60).toFixed(0)+' minutes')
+      //console.log(((expirationDuration/1000)/60))
+      //console.log(((expirationDuration/1000)/60).toFixed(0))
+      console.log(`Token Expires in ${((expirationDuration/1000)/60).toFixed(0)} minutes`)
+
     }
   }
 
