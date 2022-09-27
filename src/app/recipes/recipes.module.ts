@@ -25,6 +25,6 @@ import { RecipesRoutingModule } from './recipes-routing.module';
     ReactiveFormsModule,
     RecipesRoutingModule
   ],
-  
 })
+
 export class RecipesModule { }
