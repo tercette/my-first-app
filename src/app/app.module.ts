@@ -25,7 +25,6 @@ import { AuthComponent } from './auth/auth.component';
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
-    ShoppingListModule,
     SharedModule,
     CoreModule
   ],
