@@ -30,7 +30,7 @@ import { shoppingListReducer } from './shopping-list/store/shopping-list.reducer
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
-    StoreModule.forRoot({ShoppingList: shoppingListReducer }),
+    StoreModule.forRoot({shoppingList: shoppingListReducer }),
     SharedModule,
     CoreModule
   ],
