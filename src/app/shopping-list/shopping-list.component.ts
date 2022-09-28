@@ -21,7 +21,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
     private store: Store<fromShoppingList.AppState>
     ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.ingredients = this.store.select('shoppingList');
     /* this.ingredients = this.slService.getIngredients();
     this.destroying = this.slService.ingredientsChanged

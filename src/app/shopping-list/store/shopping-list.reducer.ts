@@ -1,10 +1,9 @@
-import { Action } from '@ngrx/store';
 import { Ingredient } from '../../shared/ingredient.model';
 import * as ShoppingListActions from './shopping-list.actions';
 
 
 export interface State {
-  ingredients : Ingredient [];
+  ingredients : Ingredient[];
   editedIngredient: Ingredient;
   editedIngredientIndex: number
 }
