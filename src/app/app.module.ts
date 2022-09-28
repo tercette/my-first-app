@@ -1,4 +1,4 @@
-import { StoreModule } from '@ngrx/store';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app-rounting.module';
@@ -13,7 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 import { AuthComponent } from './auth/auth.component';
-import { shoppingListReducer } from './shopping-list/store/shopping-list.reducer';
+
 
 
 @NgModule({
@@ -28,7 +28,7 @@ import { shoppingListReducer } from './shopping-list/store/shopping-list.reducer
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
-    StoreModule.forRoot({shoppingList: shoppingListReducer}),
+
     SharedModule,
     CoreModule
   ],
