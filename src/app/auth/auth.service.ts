@@ -26,7 +26,7 @@ export class AuthService {
   constructor(
     private http: HttpClient,
     private router: Router,
-    private store: Store<fromApp.appState>
+    private store: Store<fromApp.AppState>
   ) {}
 
   signup(email: string, password: string) {

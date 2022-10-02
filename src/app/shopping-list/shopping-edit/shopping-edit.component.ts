@@ -19,7 +19,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
   editedItem: Ingredient;
 
   constructor(
-    private store: Store<fromApp.appState>
+    private store: Store<fromApp.AppState>
   ) {}
 
   ngOnInit() {

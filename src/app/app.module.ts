@@ -1,4 +1,5 @@
 
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app-rounting.module';
@@ -15,6 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AuthComponent } from './auth/auth.component';
 import * as fromApp from './store/app.reducer'
+import { EffectsModule } from '@ngrx/effects';
+import { RecipeEffects } from './recipes/store/recipe.effects';
 
 
 
@@ -31,6 +34,7 @@ import * as fromApp from './store/app.reducer'
     HttpClientModule,
     AppRoutingModule,
     StoreModule.forRoot(fromApp.appReducer),
+    EffectsModule.forRoot([ RecipeEffects ]),
     SharedModule,
     CoreModule
   ],

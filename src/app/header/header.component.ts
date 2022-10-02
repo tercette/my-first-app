@@ -5,6 +5,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as fromApp from '../store/app.reducer';
 import { map } from 'rxjs/operators';
+import * as RecipeActions from '../recipes/store/recipe.actions'
 
 @Component({
   selector: 'app-header',
@@ -18,7 +19,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   constructor(
     private dataStorageService: DataStorageService,
     private authService: AuthService,
-    private store: Store<fromApp.appState>
+    private store: Store<fromApp.AppState>
   ) {}
 
   ngOnInit() {
@@ -37,7 +38,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   onFetchData() {
-    this.dataStorageService.fetchRecipes().subscribe();
+    //this.dataStorageService.fetchRecipes().subscribe();
+    this.store.dispatch(new RecipeActions.FetchRecipes())
   }
 
   onLogout() {

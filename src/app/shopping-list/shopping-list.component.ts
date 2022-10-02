@@ -20,7 +20,7 @@ export class ShoppingListComponent implements OnInit {
 
   constructor(
 
-    private store: Store<fromApp.appState>
+    private store: Store<fromApp.AppState>
     ) { }
 
   ngOnInit() {

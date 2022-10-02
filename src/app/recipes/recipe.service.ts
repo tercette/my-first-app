@@ -30,7 +30,7 @@ export class RecipeService {
 
   constructor(
 
-    private store: Store<fromApp.appState>
+    private store: Store<fromApp.AppState>
   ) {}
 
   setRecipes(recipes: Recipe[]) {
