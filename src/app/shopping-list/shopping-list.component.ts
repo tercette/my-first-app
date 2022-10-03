@@ -1,3 +1,4 @@
+import { DataStorageService } from './../shared/data-storage.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Ingredient } from '../shared/ingredient.model';
@@ -14,7 +15,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   ingredients: Ingredient[];
   private destroying: Subscription;
 
-  constructor(private slService: ShoppingListService) { }
+  constructor(private slService: ShoppingListService, private dataStorageService: DataStorageService) { }
 
   ngOnInit(): void {
     this.ingredients = this.slService.getIngredients();
@@ -28,6 +29,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
 
   onEditItem(index: number) {
     this.slService.startedEditing.next(index);
+    
   }
 
   ngOnDestroy() {

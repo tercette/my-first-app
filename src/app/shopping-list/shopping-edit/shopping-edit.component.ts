@@ -1,3 +1,4 @@
+import { DataStorageService } from './../../shared/data-storage.service';
 import {
   Component,
   OnInit,
@@ -20,7 +21,9 @@ editMode = false;
 editedItemIndex: number;
 editedItem: Ingredient;
 
-  constructor(private slService : ShoppingListService) { }
+  constructor(private slService : ShoppingListService,
+    private dataStorageService: DataStorageService
+    ) { }
 
   ngOnInit() {
     this.subscription = this.slService.startedEditing
@@ -35,6 +38,7 @@ editedItem: Ingredient;
           })
       }
     );
+    this.dataStorageService.fetchIngredients().subscribe();
   }
 
   onSubmit(form: NgForm) {
@@ -47,6 +51,7 @@ editedItem: Ingredient;
     }
     this.editMode = false
     this.slForm.reset()
+    this.dataStorageService.storeIngredients();
   }
 
   onClear(){
@@ -56,6 +61,7 @@ editedItem: Ingredient;
 
   onDelete(){
     this.slService.deleteIngredient(this.editedItemIndex);
+    this.dataStorageService.storeIngredients();
     this.onClear();
   }
 
